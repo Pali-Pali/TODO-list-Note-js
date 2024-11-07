@@ -1,0 +1,17 @@
+{
+  "name": "todo-list-note",
+  "version": "1.0.0",
+  "description": "This is a project about creating a to do list using Note js.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}
