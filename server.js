@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { LocalStorage } = require('node-localstorage'); // Import node-localstorage
+const { LocalStorage } = require('node-localstorage'); 
 
 const app = express();
 const port = 3000;
@@ -8,10 +8,10 @@ const port = 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Initialize local storage
-const localStorage = new LocalStorage('./scratch'); // The './scratch' folder will be used for storage
+
+const localStorage = new LocalStorage('./scratch'); 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let taskId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 1; // Calculate the next task ID
+let taskId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 1; 
 
 console.log("Current directory:", __dirname);
 
@@ -27,7 +27,7 @@ app.post('/tasks', (req, res) => {
     };
     tasks.push(newTask);
     
-    // Save to local storage
+   
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
     res.json(newTask);
@@ -38,7 +38,7 @@ app.put('/tasks/:id/completed', (req, res) => {
     if (task) {
         task.completed = true;
         
-        // Update local storage
+        
         localStorage.setItem('tasks', JSON.stringify(tasks));
 
         res.json(task);
@@ -49,8 +49,7 @@ app.put('/tasks/:id/completed', (req, res) => {
 
 app.delete('/tasks/:id', (req, res) => {
     tasks = tasks.filter(task => task.id !== parseInt(req.params.id));
-    
-    // Update local storage
+   
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
     res.status(200).send();

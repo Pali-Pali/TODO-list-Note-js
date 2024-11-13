@@ -15,6 +15,14 @@ function selectDay(element) {
     element.classList.remove('active-click');
   }, 150); 
 }
+function openBook() {
+  const bookCover = document.getElementById('book-cover');
+  const book = document.getElementById('book');
+
+  // Add the 'open' class to animate the cover and reveal the book
+  bookCover.classList.add('open');
+  book.classList.add('open');
+}
 
 function addTask() {
   const todoInput = document.getElementById("todo-input");
@@ -112,26 +120,46 @@ function loadTasks() {
 }
 
 
-document.getElementById('set-reminder-btn').addEventListener('click', function() {
-  const reminderText = document.getElementById('reminder').value;
 
-  if (reminderText.trim() !== '') {
-    document.getElementById('reminder-display').textContent = `Reminder: ${reminderText}`;
-    document.getElementById('reminder-display').style.display = 'block'; 
-    document.getElementById('reminder').value = '';
+const reminderInput = document.getElementById('reminder');
+const setReminderBtn = document.getElementById('set-reminder-btn');
+const reminderDisplay = document.getElementById('reminder-display');
+
+// Function to add a reminder
+function addReminder() {
+  const reminderText = reminderInput.value.trim();
+
+  // Check if the input is not empty
+  if (reminderText !== '') {
+    // Create a new div to hold the reminder
+    const reminderItem = document.createElement('div');
+    reminderItem.className = 'reminder-item';
     
+    // Create the reminder text element
+    const reminderTextElement = document.createElement('span');
+    reminderTextElement.textContent = reminderText;
+
+    // Create a delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.className = 'delete-btn';
     
-    localStorage.setItem('reminder', reminderText);
-  } else {
-    alert('Please add a reminder!');
-  }
-});
+    // Add event listener to delete the reminder
+    deleteBtn.addEventListener('click', () => {
+      reminderDisplay.removeChild(reminderItem);
+    });
 
+    // Append the text and delete button to the reminder item
+    reminderItem.appendChild(reminderTextElement);
+    reminderItem.appendChild(deleteBtn);
+    
+    // Append the reminder item to the display section
+    reminderDisplay.appendChild(reminderItem);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const savedReminder = localStorage.getItem('reminder');
-  if (savedReminder) {
-    document.getElementById('reminder-display').textContent = `Reminder: ${savedReminder}`;
-    document.getElementById('reminder-display').style.display = 'block';
+    // Clear the input field
+    reminderInput.value = '';
   }
-});
+}
+
+// Add event listener to the "Set Reminder" button
+setReminderBtn.addEventListener('click', addReminder);

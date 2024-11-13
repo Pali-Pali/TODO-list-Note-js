@@ -14,7 +14,50 @@ body {
   background-image: url('Cute-lined-paper-printable1_1-720x1018.jpg');
   background-repeat: no-repeat;
   background-position: center;
-} 	
+} 
+
+.book-cover {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  /* background-color: #f7f1f5; */
+  background: linear-gradient(to right, #ffffff, #f5c0e7);
+  color: rgb(7, 7, 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: transform 1s ease-in-out;
+  transform-origin: left;
+  z-index: 10;
+}
+
+
+.cover-content {
+  text-align: center;
+}
+
+.cover-content h1 {
+  font-size: 98px; 
+  margin-bottom: 20px;
+}
+
+.cover-content p {
+  font-size: 24px; 
+  margin-top: 0;
+}
+.book {
+  visibility: hidden;
+  transition: visibility 0s linear 1s; 
+}
+.book-cover.open {
+  transform: rotateY(-180deg);
+  z-index: 0;
+}
 
 .planner {
   background-color: #f3daf0da;
@@ -144,7 +187,7 @@ input[type="text"], textarea {
 }
 
 button {
-  background-color: #4a90e2;
+  background-color: #f876d8;
   color: #fff;
   padding: 8px 12px;
   border: none;
@@ -152,17 +195,35 @@ button {
   cursor: pointer;
   justify-content: center;
   align-items: center;  
+  font-size: large;
 }
 
 button:hover {
-  background-color: #357ab7;
+  background-color: #f3c0e6;
 }
 .list {
   background-image: url('Cute-lined-paper-printable1_1-720x1018.jpg');
 }
-.reminder-section {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.reminder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.delete-btn {
+  background-color:  #ff56da;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #f788df;
 }
