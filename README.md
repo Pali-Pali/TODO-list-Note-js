@@ -1,17 +1,28 @@
 # TODO-list-Note-js
 A simple and intuitive TODO List application developed using Node.js and Express.js. This application enables users to manage their daily tasks by adding, editing, deleting, and marking them as complete. It is designed to be easy to use, with a clean interface and responsive design.
 # Table of content
-Features 
+Features
+
 Technologies Used
+
 Getting started
+
 Prerequisities
+
 Installation
+
 Usage
+
 Project structure
+
 Contributing
+
 License
+
 Contact
+
 Acknowledgements
+
 # Features
 Add Tasks: Quickly create new tasks to stay organized.
 Edit Tasks: Update tasks to reflect changes.
