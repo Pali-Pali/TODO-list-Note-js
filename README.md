@@ -77,26 +77,6 @@ public
 -app.js               
 -package.json 
 
-# Contributing
-Fork the repository on GitHub.
-# Create a new branch for your feature:
-bash
-git checkout -b feature/your-feature-name
-# Make your changes and commit them:
-
-bash
-Copy code
-git commit -m "Add a descriptive commit message"
-# Push your changes to your branch:
-
-bash
-Copy code
-git push origin feature/your-feature-name
-**Submit a Pull Request** on the repository's GitHub page.
-
-# License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 # Contact
 If you have any questions or suggestions, feel free to reach out:
 
