@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: transparent;
+  background-image: url('Cute-lined-paper-printable1_1-720x1018.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+} 
+
+.book-cover {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  /* background-color: #f7f1f5; */
+  background: linear-gradient(to right, #ffffff, #f5c0e7);
+  color: rgb(7, 7, 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: transform 1s ease-in-out;
+  transform-origin: left;
+  z-index: 10;
+}
+
+
+.cover-content {
+  text-align: center;
+}
+
+.cover-content h1 {
+  font-size: 98px; 
+  margin-bottom: 20px;
+}
+
+.cover-content p {
+  font-size: 24px; 
+  margin-top: 0;
+}
+.book {
+  visibility: hidden;
+  transition: visibility 0s linear 1s; 
+}
+.book-cover.open {
+  transform: rotateY(-180deg);
+  z-index: 0;
+}
+
+.planner {
+  background-color: #f3daf0da;
+  width: 350px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 35px;
+}
+
+path {
+  fill: transparent;
+}
+
+text {
+  fill: #f807f8;
+}
+.days-of-week {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.days-of-week div {
+  background-color: #ffd6d6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  width: calc(100% / 7 - 4px);
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.days-of-week div:hover {
+  background-color: #ff9999;
+  color: #fff;
+}
+
+.days-of-week div:active
+ {
+  background-color: #db8282;
+  color: #fff;
+}
+
+.days-of-week .selected {
+  background-color: #ff9999;
+  color: #fff;
+}
+
+.days-of-week .active-click {
+  background-color: #ffb3b3;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.todo-section, .goals-section, .reminder-section, .notes-section {
+  margin-bottom: 20px;
+
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#todo-list {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+#todo-list li {
+  background-color: #e0e7ff;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+#todo-list li.completed {
+  background-color: #c8e6c9;
+  text-decoration: line-through;
+  color: #555;
+}
+
+#todo-list li button {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+}
+
+#todo-list li .toggle-complete {
+  background: none;
+  border: none;
+  color: #4caf50;
+  cursor: pointer;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #f876d8;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;  
+  font-size: large;
+}
+
+button:hover {
+  background-color: #f3c0e6;
+}
+.list {
+  background-image: url('Cute-lined-paper-printable1_1-720x1018.jpg');
+}
+.reminder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.delete-btn {
+  background-color:  #ff56da;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #f788df;
+}
