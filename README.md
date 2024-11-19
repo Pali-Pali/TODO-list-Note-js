@@ -45,7 +45,7 @@ Make sure you have the following installed:
 ### Installation
 
 ### Deployment Link:
-https://pali-pali.github.io/TODO-list-Note-js/public/
+todo-list-note-js.vercel.app
 
 # Clone the repository
 git clone https://github.com/Pali-Pali/TODO-list-Note-js.git
